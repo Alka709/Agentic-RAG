@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Environment
+.env
+
+# Uploaded documents
+uploads/*
+!uploads/.gitkeep
+
+# Vector database
+vector_db/*
+!vector_db/.gitkeep
+
+# Local data
+data/*
+!data/.gitkeep
