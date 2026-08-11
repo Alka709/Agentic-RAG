@@ -14,6 +14,7 @@ from rag.vector_store import create_vector_store
 from rag.retriever import retrieve_documents
 from rag.prompt import create_rag_prompt
 from rag.generator import create_llm,generate_answer
+from rag.evaluator import evaluate_retrieval
 
 def main():
     file_path = input("Enter document path: ").strip()
@@ -43,12 +44,35 @@ def main():
 
     results=retrieve_documents(vector_store,question,TOP_K)
 
-    context="\n\n".join(document.page_content for document,score in results)
+    evaluation=evaluate_retrieval(results)
 
-    answer=generate_answer(llm,prompt,question,context)
+    print("\nRetrieval Evaluation:")
+    print(evaluation)
+
+    context="\n\n".join(result["content"] for result in results)
+
+    answer=generate_answer(
+        llm,
+        prompt,
+        question,
+        context)
+
+    print("\nRetrieved Documents:")
+
+    for i, result in enumerate(results, start=1):
+
+        print(
+            f"\n{i}. "
+            f"Score: {result['score']:.4f}"
+        )
+
+        print(
+            f"Source: "
+            f"{result['metadata'].get('source', 'unknown')}"
+        )
 
     print("\nAnswer:")
     print(answer)
 
-if __name__="__main__":
+if __name__=="__main__":
     main()
