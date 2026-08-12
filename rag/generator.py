@@ -1,7 +1,12 @@
 from langchain_ollama import ChatOllama
 
 def create_llm(model_name):
-    return ChatOllama(model=model_name,temperature=0)
+    return ChatOllama(
+        model=model_name,
+        temperature=0,
+        num_ctx=2048,       # limit context window to reduce RAM usage
+        num_predict=512,    # cap output length for faster responses
+    )
 
 def generate_answer(llm,prompt,question,context):
     messages=prompt.invoke({

@@ -6,7 +6,7 @@ def retrieve_documents(vectore_store,query,top_k):
     retrieved=[]
 
     for document,score in results:
-        retrieve.append({
+        retrieved.append({
             "content": document.page_content,
             "score":float(score),
             "metadata":document.metadata

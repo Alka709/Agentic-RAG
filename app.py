@@ -1,5 +1,5 @@
+from pathlib import Path
 from config import(
-    path,
     EMBEDDING_MODEL,
     LLM_MODEL,
     CHUNK_SIZE,
@@ -12,7 +12,7 @@ from rag.splitter import split_documents
 from rag.embeddings import get_embedding_model
 from rag.vector_store import create_vector_store
 from rag.retriever import retrieve_documents
-from rag.prompt import create_rag_prompt
+from rag.prompts import create_rag_prompt
 from rag.generator import create_llm,generate_answer
 from rag.evaluator import evaluate_retrieval
 
@@ -44,7 +44,11 @@ def main():
 
     results=retrieve_documents(vector_store,question,TOP_K)
 
-    evaluation=evaluate_retrieval(results)
+    evaluation = evaluate_retrieval(
+    llm,
+    question,
+    results
+    )
 
     print("\nRetrieval Evaluation:")
     print(evaluation)

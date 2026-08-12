@@ -1,39 +1,68 @@
-def evaluate_retrieval(results,threshold=0.7):
-    if not results:
-        return{
-            "relevance":0.0,
-            "sufficient":False,
-            "reason":"No document was retrieved"
-        }
-    scores=[
-        result["score"]
-        for result in results
-    ]
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_ollama import ChatOllama
+from langchain_core.output_parsers import JsonOutputParser
 
-    best_score=min(scores)
-    average_score=sum(scores)/len(scores)
+def create_evaluator_prompts():
+    return ChatPromptTemplate.from_messages([
+        (
+            "system",
+            """
+You are a retrieval quality evaluator for a RAG system.
 
-    # Count results that are reasonably close
-    useful_chunks = sum(
-        score <= distance_threshold
-        for score in scores
-    )
+Your job is to determine whether the retrieved context is
+good enough to answer the user's question.
 
-    # Basic heuristic
-    sufficient = (
-        best_score <= distance_threshold
-        and useful_chunks >= 2
-    )
+Evaluate the context based on:
 
-    return {
-        "sufficient": sufficient,
-        "confidence": round(confidence, 3),
-        "best_score": round(best_score, 3),
-        "average_score": round(average_score, 3),
-        "useful_chunks": useful_chunks,
-        "reason": (
-            "Retrieved context appears strong enough."
-            if sufficient
-            else "Retrieved context may be insufficient."
+1. Relevance:
+   Does the context discuss the subject of the question?
+
+2. Coverage:
+   Does the context contain enough information to answer
+   the question?
+
+3. Sufficiency:
+   Can the question be answered accurately using only
+   the retrieved context?
+
+Return ONLY valid JSON in this exact format:
+
+{{
+    "relevance": 0.0,
+    "coverage": 0.0,
+    "sufficient": true,
+    "reason": "short explanation"
+}}
+
+Scores must be between 0 and 1.
+
+Do not use information outside the provided context.
+
+Context:
+{context}
+"""
+        ),
+        (
+            "human",
+            "Question: {question}"
         )
-    }
+    ])
+
+def evaluate_retrieval(llm,question,results):
+    context="\n\n".join(
+        result["content"]
+        for result in results
+    )
+
+    prompt=create_evaluator_prompts()
+
+    messages=prompt.invoke({
+        "question":question,
+        "context":context
+    })
+
+    response=llm.invoke(messages)
+
+    parser=JsonOutputParser()
+
+    return parser.parse(response.content)

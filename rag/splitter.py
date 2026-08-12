@@ -1,10 +1,10 @@
-from langchain_text_splitters import RecursiveCharacterTextSpliter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 def split_documents(documents,chunk_size,chunk_overlap):
-    splitter=RecursiveCharacterTextSpliter(
+    splitter=RecursiveCharacterTextSplitter(
         chunk_size=chunk_size,
         chunk_overlap=chunk_overlap,
-        seprators=["\n\n","\n","."," ",""]
+        separators=["\n\n","\n","."," ",""]
     )
 
     return splitter.split_documents(documents)
