@@ -1,5 +1,6 @@
 from pathlib import Path
-from config import(
+
+from config import (
     EMBEDDING_MODEL,
     LLM_MODEL,
     CHUNK_SIZE,
@@ -11,25 +12,20 @@ from rag.loader import load_documents
 from rag.splitter import split_documents
 from rag.embeddings import get_embedding_model
 from rag.vector_store import create_vector_store
-from rag.retriever import retrieve_documents
 from rag.prompts import create_rag_prompt
-from rag.generator import create_llm,generate_answer
-from rag.evaluator import evaluate_retrieval
+from rag.generator import create_llm
+
+from graphs.graph import build_rag_graph
 
 def main():
-    file_path = input("Enter document path: ").strip()
+    file_path=Path(input("Enter document path: ").strip())
 
-    path = Path(file_path)
-    
-    documents=load_documents(path)
+    documents=load_documents(file_path)
 
-    chunks=split_documents(
-        documents,
-        CHUNK_SIZE,
-        CHUNK_OVERLAP
-    )
+    print(f"Loaded {len(documents)} document pages")
 
-    print(f"Loaded {len(documents)} documents")
+    chunks=split_documents(documents,CHUNK_SIZE,CHUNK_OVERLAP)
+
     print(f"Created {len(chunks)} chunks")
 
     embeddings=get_embedding_model(EMBEDDING_MODEL)
@@ -40,43 +36,30 @@ def main():
 
     prompt=create_rag_prompt()
 
-    question=input("\nAsk a question: ")
+    rag_graph=build_rag_graph(vector_store,llm,prompt,TOP_K)
 
-    results=retrieve_documents(vector_store,question,TOP_K)
+    while True:
+        question=input("\nAsk a question (or type 'exit'): ")
 
-    evaluation = evaluate_retrieval(
-    llm,
-    question,
-    results
-    )
+        if question.lower() == 'exit':
+            break
+        
+        result=rag_graph.invoke({
+            "question": question
+        })
 
-    print("\nRetrieval Evaluation:")
-    print(evaluation)
+        evaluation=result.get("evaluation",{})
 
-    context="\n\n".join(result["content"] for result in results)
+        print("\nRetrieval Evaluation:")
+        print(evaluation)
 
-    answer=generate_answer(
-        llm,
-        prompt,
-        question,
-        context)
+        if result.get("answer"):
+            print("\nAnswer:")
+            print(result["answer"])
+        else:
+            print(
+                "\nThe retrieved context was not sufficient. Web search will be used in the next phase."
+            )
 
-    print("\nRetrieved Documents:")
-
-    for i, result in enumerate(results, start=1):
-
-        print(
-            f"\n{i}. "
-            f"Score: {result['score']:.4f}"
-        )
-
-        print(
-            f"Source: "
-            f"{result['metadata'].get('source', 'unknown')}"
-        )
-
-    print("\nAnswer:")
-    print(answer)
-
-if __name__=="__main__":
+if __name__== "__main__":
     main()

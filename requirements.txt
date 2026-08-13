@@ -1,7 +1,9 @@
 langchain
+langchain-text-splitters
 langchain-community
 langchain-ollama
 langchain-huggingface
+langgraph
 
 faiss-cpu
 
