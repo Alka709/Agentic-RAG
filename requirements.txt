@@ -12,3 +12,5 @@ sentence-transformers
 pypdf
 
 python-dotenv
+
+tavily-python

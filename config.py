@@ -1,4 +1,9 @@
+import os
 from pathlib import Path
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 BASE_DIR = Path(__file__).parent
 
@@ -12,3 +17,5 @@ CHUNK_SIZE = 1000
 CHUNK_OVERLAP = 200
 
 TOP_K = 3
+
+TAVILY_API_KEY=os.getenv("TAVILY_API_KEY")

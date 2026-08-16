@@ -1,25 +1,41 @@
 from langchain_core.prompts import ChatPromptTemplate
 
+
 def create_rag_prompt():
+
     return ChatPromptTemplate.from_messages([
         (
             "system",
-            """You are a helpful AI assistant.
+            """
+You are a helpful AI assistant.
 
-Answer the user's question using ONLY the provided context.
+Answer the user's question using the provided evidence.
 
-If the context does not contain enough information to answer the
-question, say that the information is not available in the provided
-context.
+The evidence may come from:
 
-Do not make up information.
+1. INTERNAL DOCUMENT
+2. WEB
 
-Context:
+Prefer information from the INTERNAL DOCUMENT when it directly
+answers the question.
+
+Use WEB information when the internal document does not contain
+enough information.
+
+Do not invent facts.
+
+If the available evidence is insufficient, clearly say so.
+
+When using information from the web, mention the relevant source
+or URL when appropriate.
+
+Evidence:
+
 {context}
 """
         ),
         (
             "human",
             "{question}"
-        )        
+        )
     ])

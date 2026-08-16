@@ -14,52 +14,112 @@ from rag.embeddings import get_embedding_model
 from rag.vector_store import create_vector_store
 from rag.prompts import create_rag_prompt
 from rag.generator import create_llm
+from rag.web_search import create_web_search_client
 
 from graphs.graph import build_rag_graph
 
+
 def main():
-    file_path=Path(input("Enter document path: ").strip())
 
-    documents=load_documents(file_path)
+    web_client = create_web_search_client()
 
-    print(f"Loaded {len(documents)} document pages")
+    file_path = Path(
+        input("Enter document path: ").strip()
+    )
 
-    chunks=split_documents(documents,CHUNK_SIZE,CHUNK_OVERLAP)
+    documents = load_documents(file_path)
 
-    print(f"Created {len(chunks)} chunks")
+    print(
+        f"Loaded {len(documents)} document pages"
+    )
 
-    embeddings=get_embedding_model(EMBEDDING_MODEL)
+    chunks = split_documents(
+        documents,
+        CHUNK_SIZE,
+        CHUNK_OVERLAP
+    )
 
-    vector_store=create_vector_store(chunks,embeddings)
+    print(
+        f"Created {len(chunks)} chunks"
+    )
 
-    llm=create_llm(LLM_MODEL)
+    embeddings = get_embedding_model(
+        EMBEDDING_MODEL
+    )
 
-    prompt=create_rag_prompt()
+    vector_store = create_vector_store(
+        chunks,
+        embeddings
+    )
 
-    rag_graph=build_rag_graph(vector_store,llm,prompt,TOP_K)
+    llm = create_llm(
+        LLM_MODEL
+    )
+
+    prompt = create_rag_prompt()
+
+    rag_graph = build_rag_graph(
+        vector_store,
+        llm,
+        prompt,
+        TOP_K,
+        web_client
+    )
 
     while True:
-        question=input("\nAsk a question (or type 'exit'): ")
+        question = input(
+            "\nAsk a question (or type 'exit'): "
+        )
 
-        if question.lower() == 'exit':
+        if question.lower() == "exit":
             break
-        
-        result=rag_graph.invoke({
+
+        result = rag_graph.invoke({
             "question": question
         })
 
-        evaluation=result.get("evaluation",{})
+        evaluation = result.get(
+            "evaluation",
+            {}
+        )
 
         print("\nRetrieval Evaluation:")
         print(evaluation)
 
-        if result.get("answer"):
-            print("\nAnswer:")
-            print(result["answer"])
-        else:
+        web_results = result.get(
+            "web_results",
+            []
+        )
+
+        if web_results:
+
             print(
-                "\nThe retrieved context was not sufficient. Web search will be used in the next phase."
+                f"\nWeb search used: "
+                f"{len(web_results)} results"
             )
 
-if __name__== "__main__":
+            for item in web_results:
+                print(
+                    f"- {item['title']}"
+                )
+
+                print(
+                    f"  {item['url']}"
+                )
+
+        else:
+            print(
+                "\nWeb search not required."
+            )
+
+        print("\nAnswer:")
+
+        print(
+            result.get(
+                "answer",
+                "Unable to generate an answer."
+            )
+        )
+
+if __name__ == "__main__":
     main()
