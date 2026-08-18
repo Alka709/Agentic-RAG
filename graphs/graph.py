@@ -3,7 +3,8 @@ from graphs.state import RAGState
 from graphs.nodes import(
     retrieve_node,
     evaluate_node,
-    answer_node
+    answer_node,
+    web_search_node
 )
 from graphs.router import retrieval_router
 
