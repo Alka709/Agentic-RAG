@@ -5,23 +5,21 @@ from config import (
     LLM_MODEL,
     CHUNK_SIZE,
     CHUNK_OVERLAP,
-    TOP_K
+    TOP_K,
+    VECTOR_DB_DIR
 )
 
 from rag.loader import load_documents
 from rag.splitter import split_documents
 from rag.embeddings import get_embedding_model
-from rag.vector_store import create_vector_store
+from rag.vector_store import (create_vector_store,save_vector_store)
 from rag.prompts import create_rag_prompt
 from rag.generator import create_llm
-from rag.web_search import create_web_search_client
 
 from graphs.graph import build_rag_graph
 
 
 def main():
-
-    web_client = create_web_search_client()
 
     file_path = Path(
         input("Enter document path: ").strip()
@@ -52,6 +50,11 @@ def main():
         embeddings
     )
 
+    save_vector_store(
+        vector_store,
+        VECTOR_DB_DIR
+    )
+
     llm = create_llm(
         LLM_MODEL
     )
@@ -59,11 +62,9 @@ def main():
     prompt = create_rag_prompt()
 
     rag_graph = build_rag_graph(
-        vector_store,
         llm,
         prompt,
         TOP_K,
-        web_client
     )
 
     while True:

@@ -8,7 +8,7 @@ from graphs.nodes import(
 )
 from graphs.router import retrieval_router
 
-def build_rag_graph(vector_store,llm,prompt,top_k,web_client):
+def build_rag_graph(llm,prompt,top_k):
     graph=StateGraph(RAGState)
     
     #nodes
@@ -16,7 +16,6 @@ def build_rag_graph(vector_store,llm,prompt,top_k,web_client):
         "retrieve",
         lambda state: retrieve_node(
             state,
-            vector_store,
             top_k
         )
     )
@@ -40,10 +39,7 @@ def build_rag_graph(vector_store,llm,prompt,top_k,web_client):
 
     graph.add_node(
         "web_search",
-        lambda state: web_search_node(
-            state,
-            web_client
-        )
+        lambda state: web_search_node(state)
     )
 
     #edges

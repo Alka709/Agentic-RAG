@@ -1,42 +1,51 @@
-from rag.retriever import retrieve_documents
+from mcp_client.client import invoke_mcp_tool
 from rag.evaluator import evaluate_retrieval
 from rag.generator import generate_answer
-from rag.web_search import search_web
 
-def retrieve_node(state,vector_store,top_k):
-    question = state["question"]
-    
-    results=retrieve_documents(
-        vector_store,
-        question,
-        top_k
+def retrieve_node(state, top_k):
+
+    documents = invoke_mcp_tool(
+        "vector_search",
+        {
+            "query": state["question"],
+            "top_k": top_k
+        }
     )
 
-    return{
-        "retrieved_documents":results
+    return {
+        "documents": documents
     }
 
 def evaluate_node(state,llm):
-    question=state["question"]
-    results=state["retrieved_documents"]
-
     evaluation=evaluate_retrieval(
         llm,
-        question,results
+        state["question"],
+        state["documents"]
     )
 
     return{
         "evaluation": evaluation
     }
 
+def web_search_node(state, max_results=5):
+
+    web_results = invoke_mcp_tool(
+        "web_search",
+        {
+            "query": state["question"],
+            "max_results": max_results
+        }
+    )
+
+    return {
+        "web_results": web_results
+    }
+
 def answer_node(state, llm, prompt):
 
     question = state["question"]
 
-    vector_results = state.get(
-        "retrieved_documents",
-        []
-    )
+    vector_results = state.get("documents", [])
 
     web_results = state.get(
         "web_results",
@@ -91,13 +100,3 @@ CONTENT:
         "answer": answer
     }
 
-def web_search_node(state,web_client):
-    question=state["question"]
-    results=search_web(
-        web_client,
-        question
-    )
-
-    return{
-        "web_results":results
-    }

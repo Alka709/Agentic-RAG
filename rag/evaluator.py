@@ -60,7 +60,7 @@ Context:
 def evaluate_retrieval(llm, question, results):
 
     context = "\n\n".join(
-        result["content"]
+        result["content"] if isinstance(result, dict) else result
         for result in results
     )
 
@@ -77,4 +77,11 @@ def evaluate_retrieval(llm, question, results):
         "context": context
     })
 
-    return evaluation.model_dump()
+    result = evaluation.model_dump()
+
+    result["sufficient"] = (
+        result["relevance"] >= 0.5
+        and result["coverage"] >= 0.5
+    )
+
+    return result
