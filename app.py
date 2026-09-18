@@ -12,7 +12,7 @@ from config import (
 from rag.loader import load_documents
 from rag.splitter import split_documents
 from rag.embeddings import get_embedding_model
-from rag.vector_store import (create_vector_store,save_vector_store)
+from rag.vector_store import (create_vector_store, save_vector_store)
 from rag.prompts import create_rag_prompt
 from rag.generator import create_llm
 
@@ -25,10 +25,22 @@ def main():
         input("Enter document path: ").strip()
     )
 
+    if not file_path.exists():
+        print(f"Error: File not found at {file_path}")
+        return
+
+    print(f"\nProcessing multimodal document: {file_path.name}...")
     documents = load_documents(file_path)
 
+    text_docs = [d for d in documents if d.metadata.get("content_type") == "text"]
+    table_docs = [d for d in documents if d.metadata.get("content_type") == "table"]
+    image_docs = [d for d in documents if d.metadata.get("content_type") == "image"]
+
     print(
-        f"Loaded {len(documents)} document pages"
+        f"Extracted elements:\n"
+        f"  - Text pages: {len(text_docs)}\n"
+        f"  - Structured tables: {len(table_docs)}\n"
+        f"  - Processed images/charts: {len(image_docs)}"
     )
 
     chunks = split_documents(
@@ -38,7 +50,7 @@ def main():
     )
 
     print(
-        f"Created {len(chunks)} chunks"
+        f"Total indexed chunks: {len(chunks)}"
     )
 
     embeddings = get_embedding_model(
@@ -78,6 +90,16 @@ def main():
         result = rag_graph.invoke({
             "question": question
         })
+
+        retrieved_docs = result.get("documents", [])
+        if retrieved_docs:
+            print("\nRetrieved Internal Evidence:")
+            for i, doc in enumerate(retrieved_docs, 1):
+                c_type = doc.get("content_type", "text").upper()
+                page = doc.get("page", 1)
+                img_path = doc.get("image_path", "")
+                extra = f" | File: {img_path}" if img_path else ""
+                print(f"  [{i}] Type: {c_type} (Page {page}{extra}) | Score: {doc.get('score', 0.0):.4f}")
 
         evaluation = result.get(
             "evaluation",
@@ -121,6 +143,7 @@ def main():
                 "Unable to generate an answer."
             )
         )
+
 
 if __name__ == "__main__":
     main()

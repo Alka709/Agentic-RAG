@@ -10,6 +10,8 @@ faiss-cpu
 sentence-transformers
 
 pypdf
+pdfplumber
+pillow
 
 python-dotenv
 
