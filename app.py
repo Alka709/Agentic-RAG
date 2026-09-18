@@ -12,7 +12,8 @@ from config import (
 from rag.loader import load_documents
 from rag.splitter import split_documents
 from rag.embeddings import get_embedding_model
-from rag.vector_store import (create_vector_store, save_vector_store)
+from rag.bm25_retriever import create_bm25_index
+from rag.vector_store import create_vector_store, save_hybrid_stores
 from rag.prompts import create_rag_prompt
 from rag.generator import create_llm
 
@@ -53,6 +54,7 @@ def main():
         f"Total indexed chunks: {len(chunks)}"
     )
 
+    print("Building FAISS vector index & BM25 sparse index...")
     embeddings = get_embedding_model(
         EMBEDDING_MODEL
     )
@@ -62,10 +64,16 @@ def main():
         embeddings
     )
 
-    save_vector_store(
+    bm25_index = create_bm25_index(
+        chunks
+    )
+
+    save_hybrid_stores(
         vector_store,
+        bm25_index,
         VECTOR_DB_DIR
     )
+    print("Hybrid indexes (FAISS + BM25) successfully created and saved.")
 
     llm = create_llm(
         LLM_MODEL
@@ -93,13 +101,15 @@ def main():
 
         retrieved_docs = result.get("documents", [])
         if retrieved_docs:
-            print("\nRetrieved Internal Evidence:")
+            print("\nRetrieved Evidence:")
             for i, doc in enumerate(retrieved_docs, 1):
                 c_type = doc.get("content_type", "text").upper()
                 page = doc.get("page", 1)
                 img_path = doc.get("image_path", "")
+                ident = doc.get("identifier", "")
+                score = doc.get("rrf_score", doc.get("score", 0.0))
                 extra = f" | File: {img_path}" if img_path else ""
-                print(f"  [{i}] Type: {c_type} (Page {page}{extra}) | Score: {doc.get('score', 0.0):.4f}")
+                print(f"  [{i}] Type: {c_type} (Page {page}{extra}) | ID: {ident} | RRF Score: {score:.6f}")
 
         evaluation = result.get(
             "evaluation",

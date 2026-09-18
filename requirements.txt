@@ -12,6 +12,7 @@ sentence-transformers
 pypdf
 pdfplumber
 pillow
+rank_bm25
 
 python-dotenv
 

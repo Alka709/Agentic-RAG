@@ -19,6 +19,9 @@ OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", "1000"))
 CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "200"))
 
-TOP_K = int(os.getenv("TOP_K", "3"))
+TOP_K = int(os.getenv("TOP_K", "5"))
+RRF_K = int(os.getenv("RRF_K", "60"))
+DENSE_CANDIDATES = int(os.getenv("DENSE_CANDIDATES", "5"))
+BM25_CANDIDATES = int(os.getenv("BM25_CANDIDATES", "5"))
 
-TAVILY_API_KEY=os.getenv("TAVILY_API_KEY")
+TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
