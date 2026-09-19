@@ -95,25 +95,20 @@ def describe_image(
             _MODEL_AVAILABILITY_CACHE[model_name] = True
             return description
 
-    except Exception as e:
-        error_msg = str(e)
         if _MODEL_AVAILABILITY_CACHE.get(model_name) is None:
             if "api_key" in error_msg.lower() or "api key" in error_msg.lower() or "credentials" in error_msg.lower():
-                print(
-                    f"\n[Notice] Gemini vision model '{model_name}' failed: invalid or missing API key.\n"
-                    f"-> Make sure GEMINI_API_KEY is set correctly in your .env file.\n"
-                    f"-> Proceeding with structural image metadata for retrieval.\n"
+                logger.warning(
+                    f"Gemini vision model '{model_name}' failed: invalid or missing API key. "
+                    "Make sure GEMINI_API_KEY is set. Proceeding with structural image metadata."
                 )
             elif "not found" in error_msg.lower() or "404" in error_msg:
-                print(
-                    f"\n[Notice] Gemini model '{model_name}' was not found.\n"
-                    f"-> Check that LLM_MODEL / VISION_LLM_MODEL in .env is a valid Gemini model name (e.g. gemini-3.6-flash).\n"
-                    f"-> Proceeding with structural image metadata for retrieval.\n"
+                logger.warning(
+                    f"Gemini model '{model_name}' was not found. "
+                    "Check that LLM_MODEL / VISION_LLM_MODEL is a valid model name (e.g. gemini-3.6-flash)."
                 )
             else:
-                print(
-                    f"\n[Notice] Vision model '{model_name}' error: {error_msg}.\n"
-                    f"-> Proceeding with structural image metadata for retrieval.\n"
+                logger.warning(
+                    f"Vision model '{model_name}' error: {error_msg}. Proceeding with structural image metadata."
                 )
         _MODEL_AVAILABILITY_CACHE[model_name] = False
 

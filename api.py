@@ -182,6 +182,14 @@ async def ingest_document(
         raise HTTPException(status_code=500, detail=f"Ingestion error: {str(e)}")
 
 
+def _format_error(e: BaseException) -> str:
+    if hasattr(e, "exceptions") and e.exceptions:
+        return "; ".join([_format_error(sub) for sub in e.exceptions])
+    if getattr(e, "__cause__", None):
+        return f"{str(e)} (Caused by: {_format_error(e.__cause__)})"
+    return str(e)
+
+
 @app.post("/query")
 def query_rag(request: QueryRequest):
     """
@@ -264,7 +272,7 @@ def query_rag(request: QueryRequest):
 
     except Exception as e:
         logger.error(f"Query execution failed: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Query error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Query error: {_format_error(e)}")
 
 
 if __name__ == "__main__":

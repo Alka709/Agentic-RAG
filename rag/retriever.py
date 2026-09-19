@@ -113,17 +113,15 @@ def log_retrieval_summary(
         f"Unique candidates: {unique_count}",
         f"Final candidates: {len(final_candidates)}",
     ]
-    print("\n".join(summary_lines))
     logger.info(" | ".join(summary_lines))
 
-    print("Final ranking:")
     for doc in final_candidates:
         rank = doc.get("final_rank", 1)
         content_type = doc.get("content_type", "text")
         source = Path(doc.get("source", "")).name if doc.get("source") else "unknown"
         identifier = doc.get("identifier", "unknown")
         rrf_score = doc.get("rrf_score", doc.get("score", 0.0))
-        print(f"  rank: {rank} | content_type: {content_type} | source: {source} | identifier: {identifier} | rrf_score: {rrf_score:.6f}")
+        logger.debug(f"  rank: {rank} | content_type: {content_type} | source: {source} | identifier: {identifier} | rrf_score: {rrf_score:.6f}")
 
 
 def retrieve_documents(
