@@ -11,6 +11,26 @@ def create_llm(model_name: str):
     )
 
 
+def _format_content(content) -> str:
+    if isinstance(content, str):
+        return content
+    if isinstance(content, list):
+        parts = []
+        for item in content:
+            if isinstance(item, str):
+                parts.append(item)
+            elif isinstance(item, dict):
+                parts.append(item.get("text", str(item)))
+            elif hasattr(item, "text"):
+                parts.append(str(item.text))
+            else:
+                parts.append(str(item))
+        return "\n".join(parts)
+    if isinstance(content, dict):
+        return str(content.get("text", content))
+    return str(content)
+
+
 def generate_answer(llm, prompt, question, context):
     messages = prompt.invoke({
         "question": question,
@@ -19,4 +39,4 @@ def generate_answer(llm, prompt, question, context):
 
     response = llm.invoke(messages)
 
-    return response.content
+    return _format_content(response.content)

@@ -11,6 +11,7 @@ sentence-transformers
 
 pypdf
 pdfplumber
+docx2txt
 pillow
 rank_bm25
 

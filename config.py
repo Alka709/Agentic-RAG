@@ -12,8 +12,8 @@ IMAGE_OUTPUT_DIR = UPLOAD_DIR / "extracted_images"
 VECTOR_DB_DIR = BASE_DIR / "vector_db"
 
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "sentence-transformers/all-MiniLM-L6-v2")
-LLM_MODEL = os.getenv("LLM_MODEL", "gemini-2.0-flash")
-VISION_LLM_MODEL = os.getenv("VISION_LLM_MODEL", "gemini-2.0-flash")
+LLM_MODEL = os.getenv("LLM_MODEL", "gemini-3.6-flash")
+VISION_LLM_MODEL = os.getenv("VISION_LLM_MODEL", "gemini-3.6-flash")
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 

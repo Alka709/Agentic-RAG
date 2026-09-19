@@ -96,7 +96,7 @@ def describe_image(
             elif "not found" in error_msg.lower() or "404" in error_msg:
                 print(
                     f"\n[Notice] Gemini model '{model_name}' was not found.\n"
-                    f"-> Check that LLM_MODEL / VISION_LLM_MODEL in .env is a valid Gemini model name (e.g. gemini-2.0-flash).\n"
+                    f"-> Check that LLM_MODEL / VISION_LLM_MODEL in .env is a valid Gemini model name (e.g. gemini-3.6-flash).\n"
                     f"-> Proceeding with structural image metadata for retrieval.\n"
                 )
             else:

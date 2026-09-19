@@ -47,13 +47,13 @@ body {
 
 #root {
   width: 100%;
-  max-width: 680px;
+  max-width: 760px;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 /* Header */

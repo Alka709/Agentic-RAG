@@ -9,7 +9,6 @@ from langchain_community.document_loaders import (
     PyPDFLoader,
     Docx2txtLoader,
     TextLoader,
-    UnstructuredMarkdownLoader
 )
 from pypdf import PdfReader
 
@@ -23,7 +22,7 @@ SUPPORTED_LOADERS = {
     ".pdf": PyPDFLoader,
     ".docx": Docx2txtLoader,
     ".txt": TextLoader,
-    ".md": UnstructuredMarkdownLoader
+    ".md": TextLoader
 }
 
 # Minimum dimensions to filter out tiny decorative icons/bullets from PDFs

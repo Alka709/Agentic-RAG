@@ -4,8 +4,6 @@ import shutil
 import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional
-import urllib.request
-import urllib.parse
 
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
@@ -41,8 +39,8 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("mcp_rag_api")
 
 app = FastAPI(
-    title="MCP RAG Assistant API",
-    description="Backend API for Multimodal RAG with Hybrid Retrieval and MCP Tool Calling",
+    title="DocuMind AI API",
+    description="Backend API for DocuMind AI: Multimodal RAG with Hybrid Retrieval and MCP Tool Calling",
     version="1.0.0"
 )
 
@@ -154,11 +152,10 @@ def _process_and_index_file(file_path: Path) -> Dict[str, Any]:
 @app.post("/ingest")
 async def ingest_document(
     file: Optional[UploadFile] = File(None),
-    url: Optional[str] = Form(None),
     file_path: Optional[str] = Form(None)
 ):
     """
-    Ingests a document via file upload, URL, or local file path.
+    Ingests a document via file upload or local file path.
     Extracts text, tables, and images, builds FAISS + BM25 indexes, and saves hybrid store.
     """
     try:
@@ -168,23 +165,6 @@ async def ingest_document(
                 shutil.copyfileobj(file.file, buffer)
             return _process_and_index_file(target_path)
 
-        elif url and url.strip():
-            url_clean = url.strip()
-            # Determine filename from URL or default
-            parsed = urllib.parse.urlparse(url_clean)
-            filename = os.path.basename(parsed.path) or "downloaded_document.pdf"
-            if not any(filename.endswith(ext) for ext in [".pdf", ".docx", ".txt", ".md", ".png", ".jpg", ".jpeg"]):
-                filename += ".pdf"
-
-            target_path = UPLOAD_DIR / filename
-            req = urllib.request.Request(
-                url_clean,
-                headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
-            )
-            with urllib.request.urlopen(req, timeout=30) as response, open(target_path, "wb") as out_file:
-                shutil.copyfileobj(response, out_file)
-            return _process_and_index_file(target_path)
-
         elif file_path and file_path.strip():
             target_path = Path(file_path.strip())
             return _process_and_index_file(target_path)
@@ -192,7 +172,7 @@ async def ingest_document(
         else:
             raise HTTPException(
                 status_code=400,
-                detail="Please provide a file upload, URL, or local file path to ingest."
+                detail="Please upload a document file to ingest."
             )
 
     except HTTPException:
@@ -261,9 +241,20 @@ def query_rag(request: QueryRequest):
         web_results = result.get("web_results", [])
         web_fallback_triggered = bool(web_results)
 
+        raw_answer = result.get("answer", "No answer could be synthesized.")
+        if isinstance(raw_answer, list):
+            answer_text = "\n".join(
+                item.get("text", str(item)) if isinstance(item, dict) else str(item)
+                for item in raw_answer
+            )
+        elif isinstance(raw_answer, dict):
+            answer_text = raw_answer.get("text", str(raw_answer))
+        else:
+            answer_text = str(raw_answer)
+
         return {
             "question": request.question,
-            "answer": result.get("answer", "No answer could be synthesized."),
+            "answer": answer_text,
             "documents": formatted_docs,
             "web_results": web_results,
             "web_fallback": web_fallback_triggered,
