@@ -95,6 +95,8 @@ def describe_image(
             _MODEL_AVAILABILITY_CACHE[model_name] = True
             return description
 
+    except Exception as e:
+        error_msg = str(e)
         if _MODEL_AVAILABILITY_CACHE.get(model_name) is None:
             if "api_key" in error_msg.lower() or "api key" in error_msg.lower() or "credentials" in error_msg.lower():
                 logger.warning(
