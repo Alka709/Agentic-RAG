@@ -1,0 +1,4241 @@
+{
+  "evaluation_date": "2026-09-19 08:35:27",
+  "models": {
+    "embedding": "sentence-transformers/all-MiniLM-L6-v2",
+    "llm": "deterministic-evaluator"
+  },
+  "config": {
+    "top_k": 5,
+    "rrf_k": 60
+  },
+  "summary": {
+    "dense": {
+      "total_queries": 32,
+      "successful_queries": 32,
+      "failed_queries": 0,
+      "context_precision": 0.2625,
+      "context_recall": 0.6823,
+      "hit_rate": 0.7188,
+      "mrr": 0.6146,
+      "faithfulness": null,
+      "answer_relevance": null,
+      "avg_dense_latency_ms": 23.7,
+      "avg_bm25_latency_ms": 0.0,
+      "avg_rrf_latency_ms": 0.0,
+      "avg_retrieval_latency_ms": 23.7,
+      "avg_generation_latency_ms": 0.0,
+      "avg_total_latency_ms": 24.34,
+      "fallback_queries": 6,
+      "fallback_rate": 0.1875,
+      "category_metrics": {
+        "image": {
+          "count": 3,
+          "context_precision": 0.2,
+          "context_recall": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "keyword": {
+          "count": 7,
+          "context_precision": 0.4286,
+          "context_recall": 0.3809,
+          "hit_rate": 0.8571,
+          "mrr": 0.6905
+        },
+        "numerical": {
+          "count": 4,
+          "context_precision": 0.35,
+          "context_recall": 0.4167,
+          "hit_rate": 0.75,
+          "mrr": 0.625
+        },
+        "out_of_domain": {
+          "count": 6,
+          "context_precision": 0.0,
+          "context_recall": 1.0,
+          "hit_rate": 0.0,
+          "mrr": 0.0
+        },
+        "table": {
+          "count": 5,
+          "context_precision": 0.2,
+          "context_recall": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 0.7667
+        },
+        "text": {
+          "count": 7,
+          "context_precision": 0.3429,
+          "context_recall": 0.5,
+          "hit_rate": 0.8571,
+          "mrr": 0.7857
+        }
+      }
+    },
+    "hybrid": {
+      "total_queries": 32,
+      "successful_queries": 32,
+      "failed_queries": 0,
+      "context_precision": 0.2563,
+      "context_recall": 0.6823,
+      "hit_rate": 0.7188,
+      "mrr": 0.6641,
+      "faithfulness": null,
+      "answer_relevance": null,
+      "avg_dense_latency_ms": 20.05,
+      "avg_bm25_latency_ms": 0.22,
+      "avg_rrf_latency_ms": 0.01,
+      "avg_retrieval_latency_ms": 20.28,
+      "avg_generation_latency_ms": 0.0,
+      "avg_total_latency_ms": 20.82,
+      "fallback_queries": 6,
+      "fallback_rate": 0.1875,
+      "category_metrics": {
+        "image": {
+          "count": 3,
+          "context_precision": 0.2,
+          "context_recall": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 0.8333
+        },
+        "keyword": {
+          "count": 7,
+          "context_precision": 0.4,
+          "context_recall": 0.3809,
+          "hit_rate": 0.8571,
+          "mrr": 0.7857
+        },
+        "numerical": {
+          "count": 4,
+          "context_precision": 0.35,
+          "context_recall": 0.4167,
+          "hit_rate": 0.75,
+          "mrr": 0.75
+        },
+        "out_of_domain": {
+          "count": 6,
+          "context_precision": 0.0,
+          "context_recall": 1.0,
+          "hit_rate": 0.0,
+          "mrr": 0.0
+        },
+        "table": {
+          "count": 5,
+          "context_precision": 0.2,
+          "context_recall": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "text": {
+          "count": 7,
+          "context_precision": 0.3429,
+          "context_recall": 0.5,
+          "hit_rate": 0.8571,
+          "mrr": 0.75
+        }
+      }
+    }
+  },
+  "queries": {
+    "dense": [
+      {
+        "id": "q01",
+        "question": "What is the primary concept behind Naive Bayes classification?",
+        "query_type": "text",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.4,
+        "context_recall": 0.5,
+        "hit_rate": 1.0,
+        "mrr": 0.5,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 172.63,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 172.63,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 173.55,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q02",
+        "question": "How does Support Vector Machine (SVM) perform classification in machine learning?",
+        "query_type": "text",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c6",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 19.82,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 19.82,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 20.72,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q03",
+        "question": "What is the key advantage of Random Forest ensembles over single decision trees?",
+        "query_type": "text",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c10",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.6,
+        "context_recall": 0.6667,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 27.61,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 27.61,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 28.56,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q04",
+        "question": "What techniques are commonly used for phishing email and spam detection?",
+        "query_type": "text",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c6",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c7",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.2,
+        "context_recall": 0.3333,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 24.54,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 24.54,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 25.23,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q05",
+        "question": "Explain term frequency-inverse document frequency TF-IDF in feature extraction.",
+        "query_type": "keyword",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c6",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.2,
+        "context_recall": 0.3333,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 22.31,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 22.31,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 23.17,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q06",
+        "question": "Define the mathematical formulation of Bayes Theorem P(A|B).",
+        "query_type": "keyword",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p1_img1",
+            "content_type": "image",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 1,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p1_c1",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 1,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.4,
+        "context_recall": 0.3333,
+        "hit_rate": 1.0,
+        "mrr": 0.3333,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 22.98,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 22.98,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 23.69,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q07",
+        "question": "What is the Kernel Trick in non-linear Support Vector Machines?",
+        "query_type": "keyword",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c11",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 19.27,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 19.27,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 20.25,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q08",
+        "question": "What is the typical accuracy range reported for Naive Bayes in spam detection?",
+        "query_type": "numerical",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c7",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.8,
+        "context_recall": 0.6667,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 17.5,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 17.5,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 18.16,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q09",
+        "question": "What is the false positive rate metric formula in binary classification?",
+        "query_type": "numerical",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 16.58,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 16.58,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 17.18,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q10",
+        "question": "How is the F1-Score calculated from precision and recall?",
+        "query_type": "numerical",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c10",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c7",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.4,
+        "context_recall": 0.6667,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 18.76,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 18.76,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 19.62,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q11",
+        "question": "According to Table 1, what are the comparison dimensions across machine learning models?",
+        "query_type": "table",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 16.9,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 16.9,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 17.51,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q12",
+        "question": "What structured table entries exist on page 4 of the case study?",
+        "query_type": "table",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p1_c1",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 1,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p1_img1",
+            "content_type": "image",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 1,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c8",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 0.5,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 15.3,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 15.3,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 15.7,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q13",
+        "question": "What are the comparative rows and column headers in the performance evaluation table?",
+        "query_type": "table",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c10",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 16.78,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 16.78,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 17.37,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q14",
+        "question": "What does the structured Markdown table show regarding training complexity?",
+        "query_type": "table",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c10",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 22.4,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 22.4,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 23.24,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q15",
+        "question": "What does the diagram extracted from page 1 of ml_caseStudy illustrate?",
+        "query_type": "image",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p1_img1",
+            "content_type": "image",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 1,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p1_c1",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 1,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 17.52,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 17.52,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 17.97,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q16",
+        "question": "Describe the visual architecture flow in the cybersecurity case study diagram.",
+        "query_type": "image",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p1_img1",
+            "content_type": "image",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 1,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c8",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 18.69,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 18.69,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 19.19,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q17",
+        "question": "What components are depicted in the visual chart extracted from the document?",
+        "query_type": "image",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p1_img1",
+            "content_type": "image",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 1,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p1_c1",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 1,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 14.79,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 14.79,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 15.27,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q18",
+        "question": "What is the role of feature selection in reducing dimensionality for NLP pipelines?",
+        "query_type": "keyword",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c6",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.8,
+        "context_recall": 0.3333,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 18.49,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 18.49,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 19.11,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q19",
+        "question": "Why is cross-validation important when evaluating machine learning classifiers?",
+        "query_type": "text",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c10",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c11",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.2,
+        "context_recall": 0.3333,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 17.97,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 17.97,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 18.79,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q20",
+        "question": "What dataset split ratios are standard for training, validation, and testing?",
+        "query_type": "numerical",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p3_c8",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c10",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c7",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.2,
+        "context_recall": 0.3333,
+        "hit_rate": 1.0,
+        "mrr": 0.5,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 16.16,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 16.16,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 16.62,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q21",
+        "question": "Explain precision versus recall in spam filtering applications.",
+        "query_type": "keyword",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c7",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c6",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.8,
+        "context_recall": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 17.28,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 17.28,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 18.01,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q22",
+        "question": "What specific metrics are summarized in the benchmark comparison table?",
+        "query_type": "table",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c10",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 0.3333,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 14.01,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 14.01,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 14.64,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q23",
+        "question": "How do adversarial attacks affect spam classification filters?",
+        "query_type": "text",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c6",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c7",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.2,
+        "context_recall": 0.6667,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 19.73,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 19.73,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 22.24,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q24",
+        "question": "What is the ROC-AUC score and how is the curve constructed?",
+        "query_type": "keyword",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.2,
+        "context_recall": 0.3333,
+        "hit_rate": 1.0,
+        "mrr": 0.5,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 23.0,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 23.0,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 24.25,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q25",
+        "question": "What is the latest stock price of NVIDIA and its Q4 earnings date?",
+        "query_type": "out_of_domain",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p1_c1",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 1,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c10",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c8",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c11",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.0,
+        "context_recall": 1.0,
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 25.31,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 25.31,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 25.34,
+        "web_fallback": true,
+        "error": null
+      },
+      {
+        "id": "q26",
+        "question": "Who won the most recent FIFA World Cup and what was the final score?",
+        "query_type": "out_of_domain",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p1_img1",
+            "content_type": "image",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 1,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c7",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.0,
+        "context_recall": 1.0,
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 22.03,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 22.03,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 22.06,
+        "web_fallback": true,
+        "error": null
+      },
+      {
+        "id": "q27",
+        "question": "What is the current weather forecast for Tokyo this weekend?",
+        "query_type": "out_of_domain",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c11",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c10",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.0,
+        "context_recall": 1.0,
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 19.3,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 19.3,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 19.33,
+        "web_fallback": true,
+        "error": null
+      },
+      {
+        "id": "q28",
+        "question": "What are the latest release features in Python 3.13?",
+        "query_type": "out_of_domain",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c11",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c10",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.0,
+        "context_recall": 1.0,
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 16.38,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 16.38,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 16.4,
+        "web_fallback": true,
+        "error": null
+      },
+      {
+        "id": "q29",
+        "question": "What was the closing price of Bitcoin yesterday?",
+        "query_type": "out_of_domain",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p4_c10",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p1_c1",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 1,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c11",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p1_img1",
+            "content_type": "image",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 1,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.0,
+        "context_recall": 1.0,
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 13.55,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 13.55,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 13.57,
+        "web_fallback": true,
+        "error": null
+      },
+      {
+        "id": "q30",
+        "question": "When is the next scheduled NASA Artemis mission launch?",
+        "query_type": "out_of_domain",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c10",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c7",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c11",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.0,
+        "context_recall": 1.0,
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 14.31,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 14.31,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 14.34,
+        "web_fallback": true,
+        "error": null
+      },
+      {
+        "id": "q31",
+        "question": "What are the trade-offs between generative vs discriminative models in text classification?",
+        "query_type": "text",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c6",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.8,
+        "context_recall": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 18.61,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 18.61,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 19.22,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q32",
+        "question": "How does Laplace smoothing handle zero-frequency word occurrences in Naive Bayes?",
+        "query_type": "keyword",
+        "retrieval_mode": "dense",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 1,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 4,
+            "score": 0.015625
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.6,
+        "context_recall": 0.3333,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 17.96,
+        "bm25_retrieval_latency_ms": 0.0,
+        "rrf_latency_ms": 0.0,
+        "retrieval_latency_ms": 17.96,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 18.56,
+        "web_fallback": false,
+        "error": null
+      }
+    ],
+    "hybrid": [
+      {
+        "id": "q01",
+        "question": "What is the primary concept behind Naive Bayes classification?",
+        "query_type": "text",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 1,
+            "score": 0.032266
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 2,
+            "score": 0.032258
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 3,
+            "score": 0.031778
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c6",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 4,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 5,
+            "score": 0.015625
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.4,
+        "context_recall": 0.5,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 15.15,
+        "bm25_retrieval_latency_ms": 0.25,
+        "rrf_latency_ms": 0.02,
+        "retrieval_latency_ms": 15.42,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 16.01,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q02",
+        "question": "How does Support Vector Machine (SVM) perform classification in machine learning?",
+        "query_type": "text",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 1,
+            "score": 0.032522
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 2,
+            "score": 0.032018
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 3,
+            "score": 0.031754
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 4,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c7",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 5,
+            "score": 0.015873
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 17.35,
+        "bm25_retrieval_latency_ms": 0.19,
+        "rrf_latency_ms": 0.01,
+        "retrieval_latency_ms": 17.55,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 18.07,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q03",
+        "question": "What is the key advantage of Random Forest ensembles over single decision trees?",
+        "query_type": "text",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 1,
+            "score": 0.032522
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 2,
+            "score": 0.032266
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 3,
+            "score": 0.03125
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 4,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 5,
+            "score": 0.015873
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.6,
+        "context_recall": 0.6667,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 18.35,
+        "bm25_retrieval_latency_ms": 0.27,
+        "rrf_latency_ms": 0.01,
+        "retrieval_latency_ms": 18.63,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 19.44,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q04",
+        "question": "What techniques are commonly used for phishing email and spam detection?",
+        "query_type": "text",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 1,
+            "score": 0.032787
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 2,
+            "score": 0.031754
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c6",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 3,
+            "score": 0.031746
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 4,
+            "score": 0.031514
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c7",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 5,
+            "score": 0.03101
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.2,
+        "context_recall": 0.3333,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 22.74,
+        "bm25_retrieval_latency_ms": 0.25,
+        "rrf_latency_ms": 0.01,
+        "retrieval_latency_ms": 23.01,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 23.75,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q05",
+        "question": "Explain term frequency-inverse document frequency TF-IDF in feature extraction.",
+        "query_type": "keyword",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 1,
+            "score": 0.032787
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 2,
+            "score": 0.031754
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c6",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 3,
+            "score": 0.031754
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 4,
+            "score": 0.031258
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c7",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 5,
+            "score": 0.015873
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.2,
+        "context_recall": 0.3333,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 18.06,
+        "bm25_retrieval_latency_ms": 0.2,
+        "rrf_latency_ms": 0.02,
+        "retrieval_latency_ms": 18.28,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 18.89,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q06",
+        "question": "Define the mathematical formulation of Bayes Theorem P(A|B).",
+        "query_type": "keyword",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 1,
+            "score": 0.032018
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 2,
+            "score": 0.032002
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 3,
+            "score": 0.031778
+          },
+          {
+            "identifier": "ml_caseStudy_p1_img1",
+            "content_type": "image",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 1,
+            "rank": 4,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 5,
+            "score": 0.015873
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.4,
+        "context_recall": 0.3333,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 15.02,
+        "bm25_retrieval_latency_ms": 0.17,
+        "rrf_latency_ms": 0.01,
+        "retrieval_latency_ms": 15.2,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 15.77,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q07",
+        "question": "What is the Kernel Trick in non-linear Support Vector Machines?",
+        "query_type": "keyword",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 1,
+            "score": 0.032787
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 2,
+            "score": 0.031498
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c11",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 3,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c7",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 4,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 5,
+            "score": 0.015873
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 17.13,
+        "bm25_retrieval_latency_ms": 0.24,
+        "rrf_latency_ms": 0.01,
+        "retrieval_latency_ms": 17.38,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 18.18,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q08",
+        "question": "What is the typical accuracy range reported for Naive Bayes in spam detection?",
+        "query_type": "numerical",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 1,
+            "score": 0.032787
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 2,
+            "score": 0.032258
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 3,
+            "score": 0.031498
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c7",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 4,
+            "score": 0.030769
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 5,
+            "score": 0.015873
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.8,
+        "context_recall": 0.6667,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 16.27,
+        "bm25_retrieval_latency_ms": 0.21,
+        "rrf_latency_ms": 0.01,
+        "retrieval_latency_ms": 16.49,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 17.11,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q09",
+        "question": "What is the false positive rate metric formula in binary classification?",
+        "query_type": "numerical",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 1,
+            "score": 0.032522
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 2,
+            "score": 0.032266
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 3,
+            "score": 0.032002
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 4,
+            "score": 0.030769
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 5,
+            "score": 0.015625
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 14.23,
+        "bm25_retrieval_latency_ms": 0.18,
+        "rrf_latency_ms": 0.02,
+        "retrieval_latency_ms": 14.43,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 15.05,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q10",
+        "question": "How is the F1-Score calculated from precision and recall?",
+        "query_type": "numerical",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 1,
+            "score": 0.032522
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c7",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 2,
+            "score": 0.032266
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 3,
+            "score": 0.031498
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c10",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 4,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 5,
+            "score": 0.015625
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.4,
+        "context_recall": 0.6667,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 116.14,
+        "bm25_retrieval_latency_ms": 0.3,
+        "rrf_latency_ms": 0.02,
+        "retrieval_latency_ms": 116.46,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 117.22,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q11",
+        "question": "According to Table 1, what are the comparison dimensions across machine learning models?",
+        "query_type": "table",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 1,
+            "score": 0.032018
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 2,
+            "score": 0.032002
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 3,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c11",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 4,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 5,
+            "score": 0.015873
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 36.11,
+        "bm25_retrieval_latency_ms": 0.21,
+        "rrf_latency_ms": 0.01,
+        "retrieval_latency_ms": 36.33,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 36.93,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q12",
+        "question": "What structured table entries exist on page 4 of the case study?",
+        "query_type": "table",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 1,
+            "score": 0.032522
+          },
+          {
+            "identifier": "ml_caseStudy_p1_c1",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 1,
+            "rank": 2,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 3,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p1_img1",
+            "content_type": "image",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 1,
+            "rank": 4,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 5,
+            "score": 0.015873
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 10.24,
+        "bm25_retrieval_latency_ms": 0.19,
+        "rrf_latency_ms": 0.01,
+        "retrieval_latency_ms": 10.44,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 10.89,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q13",
+        "question": "What are the comparative rows and column headers in the performance evaluation table?",
+        "query_type": "table",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 1,
+            "score": 0.031778
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 2,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 3,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c7",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 4,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 5,
+            "score": 0.015873
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 18.6,
+        "bm25_retrieval_latency_ms": 0.2,
+        "rrf_latency_ms": 0.02,
+        "retrieval_latency_ms": 18.82,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 19.45,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q14",
+        "question": "What does the structured Markdown table show regarding training complexity?",
+        "query_type": "table",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 1,
+            "score": 0.032787
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c10",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 2,
+            "score": 0.032002
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 3,
+            "score": 0.031754
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 4,
+            "score": 0.031498
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 5,
+            "score": 0.015385
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 14.4,
+        "bm25_retrieval_latency_ms": 0.22,
+        "rrf_latency_ms": 0.01,
+        "retrieval_latency_ms": 14.63,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 15.49,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q15",
+        "question": "What does the diagram extracted from page 1 of ml_caseStudy illustrate?",
+        "query_type": "image",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p1_img1",
+            "content_type": "image",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 1,
+            "rank": 1,
+            "score": 0.032787
+          },
+          {
+            "identifier": "ml_caseStudy_p1_c1",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 1,
+            "rank": 2,
+            "score": 0.032002
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 3,
+            "score": 0.032002
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 4,
+            "score": 0.030769
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 5,
+            "score": 0.015625
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 16.57,
+        "bm25_retrieval_latency_ms": 0.18,
+        "rrf_latency_ms": 0.01,
+        "retrieval_latency_ms": 16.76,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 17.21,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q16",
+        "question": "Describe the visual architecture flow in the cybersecurity case study diagram.",
+        "query_type": "image",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 1,
+            "score": 0.032018
+          },
+          {
+            "identifier": "ml_caseStudy_p1_img1",
+            "content_type": "image",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 1,
+            "rank": 2,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 3,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c7",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 4,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c8",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 5,
+            "score": 0.015873
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 0.5,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 15.95,
+        "bm25_retrieval_latency_ms": 0.18,
+        "rrf_latency_ms": 0.01,
+        "retrieval_latency_ms": 16.14,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 16.63,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q17",
+        "question": "What components are depicted in the visual chart extracted from the document?",
+        "query_type": "image",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p1_img1",
+            "content_type": "image",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 1,
+            "rank": 1,
+            "score": 0.032787
+          },
+          {
+            "identifier": "ml_caseStudy_p1_c1",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 1,
+            "rank": 2,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c6",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 3,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 4,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c7",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 5,
+            "score": 0.015873
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 17.91,
+        "bm25_retrieval_latency_ms": 0.26,
+        "rrf_latency_ms": 0.01,
+        "retrieval_latency_ms": 18.18,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 18.84,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q18",
+        "question": "What is the role of feature selection in reducing dimensionality for NLP pipelines?",
+        "query_type": "keyword",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 1,
+            "score": 0.031778
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 2,
+            "score": 0.031754
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 3,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c6",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 4,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 5,
+            "score": 0.015873
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.8,
+        "context_recall": 0.3333,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 16.56,
+        "bm25_retrieval_latency_ms": 0.21,
+        "rrf_latency_ms": 0.01,
+        "retrieval_latency_ms": 16.78,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 17.38,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q19",
+        "question": "Why is cross-validation important when evaluating machine learning classifiers?",
+        "query_type": "text",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p4_c11",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 1,
+            "score": 0.032002
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c10",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 2,
+            "score": 0.031514
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 3,
+            "score": 0.031498
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 4,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 5,
+            "score": 0.016393
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.2,
+        "context_recall": 0.3333,
+        "hit_rate": 1.0,
+        "mrr": 0.25,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 17.5,
+        "bm25_retrieval_latency_ms": 0.23,
+        "rrf_latency_ms": 0.01,
+        "retrieval_latency_ms": 17.74,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 18.42,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q20",
+        "question": "What dataset split ratios are standard for training, validation, and testing?",
+        "query_type": "numerical",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 1,
+            "score": 0.032522
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c8",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 2,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c11",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 3,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 4,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 5,
+            "score": 0.015873
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.2,
+        "context_recall": 0.3333,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 20.29,
+        "bm25_retrieval_latency_ms": 0.3,
+        "rrf_latency_ms": 0.02,
+        "retrieval_latency_ms": 20.61,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 21.39,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q21",
+        "question": "Explain precision versus recall in spam filtering applications.",
+        "query_type": "keyword",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p3_c7",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 1,
+            "score": 0.032266
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 2,
+            "score": 0.032258
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 3,
+            "score": 0.031778
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c10",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 4,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 5,
+            "score": 0.015625
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.6,
+        "context_recall": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 10.58,
+        "bm25_retrieval_latency_ms": 0.15,
+        "rrf_latency_ms": 0.01,
+        "retrieval_latency_ms": 10.74,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 11.26,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q22",
+        "question": "What specific metrics are summarized in the benchmark comparison table?",
+        "query_type": "table",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 1,
+            "score": 0.032002
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 2,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c7",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 3,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 4,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c6",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 5,
+            "score": 0.015873
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 14.12,
+        "bm25_retrieval_latency_ms": 0.17,
+        "rrf_latency_ms": 0.01,
+        "retrieval_latency_ms": 14.3,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 14.9,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q23",
+        "question": "How do adversarial attacks affect spam classification filters?",
+        "query_type": "text",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 1,
+            "score": 0.032522
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 2,
+            "score": 0.032522
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c6",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 3,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c11",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 4,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 5,
+            "score": 0.015625
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.2,
+        "context_recall": 0.6667,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 17.07,
+        "bm25_retrieval_latency_ms": 0.2,
+        "rrf_latency_ms": 0.02,
+        "retrieval_latency_ms": 17.29,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 17.98,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q24",
+        "question": "What is the ROC-AUC score and how is the curve constructed?",
+        "query_type": "keyword",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 1,
+            "score": 0.032522
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 2,
+            "score": 0.032002
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 3,
+            "score": 0.031778
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 4,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 5,
+            "score": 0.015625
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.2,
+        "context_recall": 0.3333,
+        "hit_rate": 1.0,
+        "mrr": 0.5,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 20.37,
+        "bm25_retrieval_latency_ms": 0.33,
+        "rrf_latency_ms": 0.02,
+        "retrieval_latency_ms": 20.71,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 21.58,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q25",
+        "question": "What is the latest stock price of NVIDIA and its Q4 earnings date?",
+        "query_type": "out_of_domain",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p4_c10",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 1,
+            "score": 0.031746
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c11",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 2,
+            "score": 0.031514
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 3,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c7",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 4,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p1_c1",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 1,
+            "rank": 5,
+            "score": 0.016129
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.0,
+        "context_recall": 1.0,
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 18.87,
+        "bm25_retrieval_latency_ms": 0.21,
+        "rrf_latency_ms": 0.01,
+        "retrieval_latency_ms": 19.09,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 19.11,
+        "web_fallback": true,
+        "error": null
+      },
+      {
+        "id": "q26",
+        "question": "Who won the most recent FIFA World Cup and what was the final score?",
+        "query_type": "out_of_domain",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 1,
+            "score": 0.032787
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 2,
+            "score": 0.031754
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c7",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 3,
+            "score": 0.031258
+          },
+          {
+            "identifier": "ml_caseStudy_p1_img1",
+            "content_type": "image",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 1,
+            "rank": 4,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 5,
+            "score": 0.015873
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.0,
+        "context_recall": 1.0,
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 15.36,
+        "bm25_retrieval_latency_ms": 0.3,
+        "rrf_latency_ms": 0.01,
+        "retrieval_latency_ms": 15.67,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 15.69,
+        "web_fallback": true,
+        "error": null
+      },
+      {
+        "id": "q27",
+        "question": "What is the current weather forecast for Tokyo this weekend?",
+        "query_type": "out_of_domain",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p4_c11",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 1,
+            "score": 0.031498
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c10",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 2,
+            "score": 0.030769
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 3,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 4,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 5,
+            "score": 0.016129
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.0,
+        "context_recall": 1.0,
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 10.76,
+        "bm25_retrieval_latency_ms": 0.17,
+        "rrf_latency_ms": 0.01,
+        "retrieval_latency_ms": 10.95,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 11.01,
+        "web_fallback": true,
+        "error": null
+      },
+      {
+        "id": "q28",
+        "question": "What are the latest release features in Python 3.13?",
+        "query_type": "out_of_domain",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 1,
+            "score": 0.031514
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 2,
+            "score": 0.031498
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 3,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c5",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 4,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c6",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 5,
+            "score": 0.016129
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.0,
+        "context_recall": 1.0,
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 11.69,
+        "bm25_retrieval_latency_ms": 0.17,
+        "rrf_latency_ms": 0.01,
+        "retrieval_latency_ms": 11.87,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 11.89,
+        "web_fallback": true,
+        "error": null
+      },
+      {
+        "id": "q29",
+        "question": "What was the closing price of Bitcoin yesterday?",
+        "query_type": "out_of_domain",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p4_c10",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 1,
+            "score": 0.032522
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c11",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 2,
+            "score": 0.032266
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 3,
+            "score": 0.031498
+          },
+          {
+            "identifier": "ml_caseStudy_p1_c1",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 1,
+            "rank": 4,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 5,
+            "score": 0.015625
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.0,
+        "context_recall": 1.0,
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 14.0,
+        "bm25_retrieval_latency_ms": 0.15,
+        "rrf_latency_ms": 0.01,
+        "retrieval_latency_ms": 14.17,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 14.19,
+        "web_fallback": true,
+        "error": null
+      },
+      {
+        "id": "q30",
+        "question": "When is the next scheduled NASA Artemis mission launch?",
+        "query_type": "out_of_domain",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p4_c10",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 1,
+            "score": 0.032258
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c7",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 2,
+            "score": 0.031258
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 3,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c4",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 4,
+            "score": 0.016393
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 5,
+            "score": 0.015873
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.0,
+        "context_recall": 1.0,
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 15.93,
+        "bm25_retrieval_latency_ms": 0.21,
+        "rrf_latency_ms": 0.01,
+        "retrieval_latency_ms": 16.15,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 16.17,
+        "web_fallback": true,
+        "error": null
+      },
+      {
+        "id": "q31",
+        "question": "What are the trade-offs between generative vs discriminative models in text classification?",
+        "query_type": "text",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 1,
+            "score": 0.032522
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 2,
+            "score": 0.032018
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c6",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 3,
+            "score": 0.031746
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 4,
+            "score": 0.016129
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c11",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 5,
+            "score": 0.015625
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.8,
+        "context_recall": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 18.79,
+        "bm25_retrieval_latency_ms": 0.27,
+        "rrf_latency_ms": 0.01,
+        "retrieval_latency_ms": 19.07,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 19.78,
+        "web_fallback": false,
+        "error": null
+      },
+      {
+        "id": "q32",
+        "question": "How does Laplace smoothing handle zero-frequency word occurrences in Naive Bayes?",
+        "query_type": "keyword",
+        "retrieval_mode": "hybrid",
+        "status": "success",
+        "retrieved_documents": [
+          {
+            "identifier": "ml_caseStudy_p2_c3",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 1,
+            "score": 0.032787
+          },
+          {
+            "identifier": "ml_caseStudy_p4_tbl1",
+            "content_type": "table",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 2,
+            "score": 0.032258
+          },
+          {
+            "identifier": "ml_caseStudy_p2_c2",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 2,
+            "rank": 3,
+            "score": 0.031258
+          },
+          {
+            "identifier": "ml_caseStudy_p3_c6",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 3,
+            "rank": 4,
+            "score": 0.015873
+          },
+          {
+            "identifier": "ml_caseStudy_p4_c9",
+            "content_type": "text",
+            "source": "C:\\Users\\alka2\\OneDrive\\Desktop\\AI in Cyber security\\ml_caseStudy.pdf",
+            "page": 4,
+            "rank": 5,
+            "score": 0.015625
+          }
+        ],
+        "answer": "Synthesized answer based on 5 retrieved chunks.",
+        "context_precision": 0.6,
+        "context_recall": 0.3333,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": null,
+        "answer_relevance": null,
+        "dense_retrieval_latency_ms": 19.48,
+        "bm25_retrieval_latency_ms": 0.25,
+        "rrf_latency_ms": 0.01,
+        "retrieval_latency_ms": 19.75,
+        "generation_latency_ms": 0.0,
+        "total_latency_ms": 20.72,
+        "web_fallback": false,
+        "error": null
+      }
+    ]
+  }
+}

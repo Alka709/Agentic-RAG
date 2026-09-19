@@ -1,0 +1,420 @@
+[
+  {
+    "id": "q01",
+    "query_type": "text",
+    "question": "What is the primary concept behind Naive Bayes classification?",
+    "ground_truth_answer": "Naive Bayes is a generative classifier applying Bayes' theorem with the naive assumption of conditional independence between every pair of features given the class label.",
+    "relevant_sources": ["ml_caseStudy.pdf"],
+    "relevant_content_types": ["text"],
+    "required_context": [
+      "generative classifier applying Bayes' theorem",
+      "conditional independence"
+    ],
+    "expected_fallback": false
+  },
+  {
+    "id": "q02",
+    "query_type": "text",
+    "question": "How does Support Vector Machine (SVM) perform classification in machine learning?",
+    "ground_truth_answer": "Support Vector Machine finds the optimal separating hyperplane that maximizes the margin between classes in high-dimensional feature space.",
+    "relevant_sources": ["ml_caseStudy.pdf"],
+    "relevant_content_types": ["text"],
+    "required_context": [
+      "hyperplane",
+      "maximizes the margin",
+      "Support Vector Machine"
+    ],
+    "expected_fallback": false
+  },
+  {
+    "id": "q03",
+    "query_type": "text",
+    "question": "What is the key advantage of Random Forest ensembles over single decision trees?",
+    "ground_truth_answer": "Random Forest builds multiple decision trees on random subsets of data and features, reducing variance and overfitting compared to individual decision trees.",
+    "relevant_sources": ["ml_caseStudy.pdf"],
+    "relevant_content_types": ["text"],
+    "required_context": [
+      "decision trees",
+      "reducing variance",
+      "overfitting"
+    ],
+    "expected_fallback": false
+  },
+  {
+    "id": "q04",
+    "query_type": "text",
+    "question": "What techniques are commonly used for phishing email and spam detection?",
+    "ground_truth_answer": "Machine learning techniques such as Naive Bayes, Support Vector Machines, Random Forests, and deep neural networks are used for spam and phishing detection using text and header features.",
+    "relevant_sources": ["ml_caseStudy.pdf"],
+    "relevant_content_types": ["text"],
+    "required_context": [
+      "Machine Learning Techniques for Phishing and Spam",
+      "Naive Bayes",
+      "Support Vector"
+    ],
+    "expected_fallback": false
+  },
+  {
+    "id": "q05",
+    "query_type": "keyword",
+    "question": "Explain term frequency-inverse document frequency TF-IDF in feature extraction.",
+    "ground_truth_answer": "TF-IDF measures how important a word is to a document in a collection or corpus, weighting terms by frequency while penalizing universally common words.",
+    "relevant_sources": ["ml_caseStudy.pdf"],
+    "relevant_content_types": ["text"],
+    "required_context": [
+      "TF-IDF",
+      "feature extraction",
+      "frequency"
+    ],
+    "expected_fallback": false
+  },
+  {
+    "id": "q06",
+    "query_type": "keyword",
+    "question": "Define the mathematical formulation of Bayes Theorem P(A|B).",
+    "ground_truth_answer": "Bayes' theorem calculates the posterior probability P(A|B) = (P(B|A) * P(A)) / P(B) using prior probability and likelihood.",
+    "relevant_sources": ["ml_caseStudy.pdf"],
+    "relevant_content_types": ["text"],
+    "required_context": [
+      "Bayes' theorem",
+      "posterior probability",
+      "prior"
+    ],
+    "expected_fallback": false
+  },
+  {
+    "id": "q07",
+    "query_type": "keyword",
+    "question": "What is the Kernel Trick in non-linear Support Vector Machines?",
+    "ground_truth_answer": "The kernel trick maps non-linearly separable inputs into higher-dimensional feature spaces where a linear hyperplane can separate the data without explicitly computing coordinates in that space.",
+    "relevant_sources": ["ml_caseStudy.pdf"],
+    "relevant_content_types": ["text"],
+    "required_context": [
+      "kernel",
+      "higher-dimensional",
+      "hyperplane"
+    ],
+    "expected_fallback": false
+  },
+  {
+    "id": "q08",
+    "query_type": "numerical",
+    "question": "What is the typical accuracy range reported for Naive Bayes in spam detection?",
+    "ground_truth_answer": "Naive Bayes typically achieves between 90% to 97% accuracy depending on the dataset and feature extraction methods used.",
+    "relevant_sources": ["ml_caseStudy.pdf"],
+    "relevant_content_types": ["text", "table"],
+    "required_context": [
+      "accuracy",
+      "range",
+      "Naive Bayes"
+    ],
+    "expected_fallback": false
+  },
+  {
+    "id": "q09",
+    "query_type": "numerical",
+    "question": "What is the false positive rate metric formula in binary classification?",
+    "ground_truth_answer": "False Positive Rate (FPR) is calculated as FP / (FP + TN), representing the proportion of negative cases incorrectly identified as positive.",
+    "relevant_sources": ["ml_caseStudy.pdf"],
+    "relevant_content_types": ["text"],
+    "required_context": [
+      "False Positive",
+      "FP / (FP + TN)"
+    ],
+    "expected_fallback": false
+  },
+  {
+    "id": "q10",
+    "query_type": "numerical",
+    "question": "How is the F1-Score calculated from precision and recall?",
+    "ground_truth_answer": "The F1-Score is the harmonic mean of precision and recall, computed as 2 * (Precision * Recall) / (Precision + Recall).",
+    "relevant_sources": ["ml_caseStudy.pdf"],
+    "relevant_content_types": ["text"],
+    "required_context": [
+      "F1-Score",
+      "harmonic mean",
+      "Precision"
+    ],
+    "expected_fallback": false
+  },
+  {
+    "id": "q11",
+    "query_type": "table",
+    "question": "According to Table 1, what are the comparison dimensions across machine learning models?",
+    "ground_truth_answer": "Table 1 compares models across Dimensions such as Accuracy, Training Time, Interpretability, and Resource Consumption.",
+    "relevant_sources": ["ml_caseStudy.pdf"],
+    "relevant_content_types": ["table"],
+    "required_context": [
+      "Table 1",
+      "Columns: Dimension",
+      "Row 1"
+    ],
+    "expected_fallback": false
+  },
+  {
+    "id": "q12",
+    "query_type": "table",
+    "question": "What structured table entries exist on page 4 of the case study?",
+    "ground_truth_answer": "Page 4 contains a structured evaluation table detailing performance metrics and algorithmic trade-offs across multiple classifier families.",
+    "relevant_sources": ["ml_caseStudy.pdf"],
+    "relevant_content_types": ["table"],
+    "required_context": [
+      "Table 1 from page 4",
+      "Markdown Table:"
+    ],
+    "expected_fallback": false
+  },
+  {
+    "id": "q13",
+    "query_type": "table",
+    "question": "What are the comparative rows and column headers in the performance evaluation table?",
+    "ground_truth_answer": "The table contains column headers for Dimension, Model, Metric, and Benchmark Result, with comparative entries for Naive Bayes, SVM, and Random Forest.",
+    "relevant_sources": ["ml_caseStudy.pdf"],
+    "relevant_content_types": ["table"],
+    "required_context": [
+      "Columns:",
+      "Data Entries:",
+      "Row"
+    ],
+    "expected_fallback": false
+  },
+  {
+    "id": "q14",
+    "query_type": "table",
+    "question": "What does the structured Markdown table show regarding training complexity?",
+    "ground_truth_answer": "The Markdown table outlines training complexity, showing fast training for linear models and higher computational cost for ensemble or deep architectures.",
+    "relevant_sources": ["ml_caseStudy.pdf"],
+    "relevant_content_types": ["table"],
+    "required_context": [
+      "Markdown Table:",
+      "---"
+    ],
+    "expected_fallback": false
+  },
+  {
+    "id": "q15",
+    "query_type": "image",
+    "question": "What does the diagram extracted from page 1 of ml_caseStudy illustrate?",
+    "ground_truth_answer": "The extracted image diagram on page 1 illustrates the end-to-end machine learning pipeline architecture for cybersecurity detection.",
+    "relevant_sources": ["ml_caseStudy.pdf"],
+    "relevant_content_types": ["image"],
+    "required_context": [
+      "Image extracted from page 1",
+      "ml_caseStudy"
+    ],
+    "expected_fallback": false
+  },
+  {
+    "id": "q16",
+    "query_type": "image",
+    "question": "Describe the visual architecture flow in the cybersecurity case study diagram.",
+    "ground_truth_answer": "The visual diagram outlines data preprocessing, feature vectorization, model inference, and classification decision stages in the cybersecurity pipeline.",
+    "relevant_sources": ["ml_caseStudy.pdf"],
+    "relevant_content_types": ["image"],
+    "required_context": [
+      "Image extracted",
+      "page 1",
+      "ml_caseStudy"
+    ],
+    "expected_fallback": false
+  },
+  {
+    "id": "q17",
+    "query_type": "image",
+    "question": "What components are depicted in the visual chart extracted from the document?",
+    "ground_truth_answer": "The visual component depicts the input raw data stream, feature selection unit, classifier engine, and alert generation dashboard.",
+    "relevant_sources": ["ml_caseStudy.pdf"],
+    "relevant_content_types": ["image"],
+    "required_context": [
+      "Image",
+      "ml_caseStudy_p1_img1"
+    ],
+    "expected_fallback": false
+  },
+  {
+    "id": "q18",
+    "query_type": "keyword",
+    "question": "What is the role of feature selection in reducing dimensionality for NLP pipelines?",
+    "ground_truth_answer": "Feature selection removes redundant or noisy tokens, reducing dimensionality, improving model generalization, and lowering compute requirements.",
+    "relevant_sources": ["ml_caseStudy.pdf"],
+    "relevant_content_types": ["text"],
+    "required_context": [
+      "feature",
+      "dimensionality",
+      "selection"
+    ],
+    "expected_fallback": false
+  },
+  {
+    "id": "q19",
+    "query_type": "text",
+    "question": "Why is cross-validation important when evaluating machine learning classifiers?",
+    "ground_truth_answer": "Cross-validation evaluates model performance across multiple partitioned subsets of data to ensure stability and avoid overfitting to a single train-test split.",
+    "relevant_sources": ["ml_caseStudy.pdf"],
+    "relevant_content_types": ["text"],
+    "required_context": [
+      "cross-validation",
+      "evaluating",
+      "performance"
+    ],
+    "expected_fallback": false
+  },
+  {
+    "id": "q20",
+    "query_type": "numerical",
+    "question": "What dataset split ratios are standard for training, validation, and testing?",
+    "ground_truth_answer": "Standard dataset split ratios are typically 70:15:15 or 80:10:10 for training, validation, and testing sets.",
+    "relevant_sources": ["ml_caseStudy.pdf"],
+    "relevant_content_types": ["text"],
+    "required_context": [
+      "split",
+      "training",
+      "testing"
+    ],
+    "expected_fallback": false
+  },
+  {
+    "id": "q21",
+    "query_type": "keyword",
+    "question": "Explain precision versus recall in spam filtering applications.",
+    "ground_truth_answer": "Precision measures the proportion of identified spam emails that are truly spam, while recall measures the proportion of total spam emails successfully caught.",
+    "relevant_sources": ["ml_caseStudy.pdf"],
+    "relevant_content_types": ["text"],
+    "required_context": [
+      "Precision",
+      "Recall",
+      "spam"
+    ],
+    "expected_fallback": false
+  },
+  {
+    "id": "q22",
+    "query_type": "table",
+    "question": "What specific metrics are summarized in the benchmark comparison table?",
+    "ground_truth_answer": "The benchmark comparison table summarizes Accuracy, Precision, Recall, F1-Score, and Execution Latency across algorithms.",
+    "relevant_sources": ["ml_caseStudy.pdf"],
+    "relevant_content_types": ["table"],
+    "required_context": [
+      "Table 1",
+      "Columns:",
+      "Dimension"
+    ],
+    "expected_fallback": false
+  },
+  {
+    "id": "q23",
+    "query_type": "text",
+    "question": "How do adversarial attacks affect spam classification filters?",
+    "ground_truth_answer": "Adversarial attacks introduce subtle token perturbations or evasive obfuscation to bypass classifier thresholds without changing the payload intent.",
+    "relevant_sources": ["ml_caseStudy.pdf"],
+    "relevant_content_types": ["text"],
+    "required_context": [
+      "adversarial",
+      "classification",
+      "detection"
+    ],
+    "expected_fallback": false
+  },
+  {
+    "id": "q24",
+    "query_type": "keyword",
+    "question": "What is the ROC-AUC score and how is the curve constructed?",
+    "ground_truth_answer": "The ROC-AUC curve plots True Positive Rate against False Positive Rate at various classification thresholds, measuring the overall discriminative capacity of the model.",
+    "relevant_sources": ["ml_caseStudy.pdf"],
+    "relevant_content_types": ["text"],
+    "required_context": [
+      "ROC",
+      "True Positive Rate",
+      "False Positive Rate"
+    ],
+    "expected_fallback": false
+  },
+  {
+    "id": "q25",
+    "query_type": "out_of_domain",
+    "question": "What is the latest stock price of NVIDIA and its Q4 earnings date?",
+    "ground_truth_answer": "NVIDIA stock pricing and recent quarterly earnings schedules require live external financial market feeds.",
+    "relevant_sources": [],
+    "relevant_content_types": [],
+    "required_context": [],
+    "expected_fallback": true
+  },
+  {
+    "id": "q26",
+    "query_type": "out_of_domain",
+    "question": "Who won the most recent FIFA World Cup and what was the final score?",
+    "ground_truth_answer": "Information regarding international sports tournament results is external and not contained in the internal cybersecurity case study.",
+    "relevant_sources": [],
+    "relevant_content_types": [],
+    "required_context": [],
+    "expected_fallback": true
+  },
+  {
+    "id": "q27",
+    "query_type": "out_of_domain",
+    "question": "What is the current weather forecast for Tokyo this weekend?",
+    "ground_truth_answer": "Real-time weather meteorological forecasts require external live web search.",
+    "relevant_sources": [],
+    "relevant_content_types": [],
+    "required_context": [],
+    "expected_fallback": true
+  },
+  {
+    "id": "q28",
+    "query_type": "out_of_domain",
+    "question": "What are the latest release features in Python 3.13?",
+    "ground_truth_answer": "Python 3.13 features such as experimental free-threaded mode and JIT compiler require external release notes via web search.",
+    "relevant_sources": [],
+    "relevant_content_types": [],
+    "required_context": [],
+    "expected_fallback": true
+  },
+  {
+    "id": "q29",
+    "query_type": "out_of_domain",
+    "question": "What was the closing price of Bitcoin yesterday?",
+    "ground_truth_answer": "Real-time cryptocurrency valuation requires live internet web lookup.",
+    "relevant_sources": [],
+    "relevant_content_types": [],
+    "required_context": [],
+    "expected_fallback": true
+  },
+  {
+    "id": "q30",
+    "query_type": "out_of_domain",
+    "question": "When is the next scheduled NASA Artemis mission launch?",
+    "ground_truth_answer": "Space exploration launch schedules require live external search engines.",
+    "relevant_sources": [],
+    "relevant_content_types": [],
+    "required_context": [],
+    "expected_fallback": true
+  },
+  {
+    "id": "q31",
+    "query_type": "text",
+    "question": "What are the trade-offs between generative vs discriminative models in text classification?",
+    "ground_truth_answer": "Generative models model joint probability P(X, Y) and handle missing features well, whereas discriminative models model conditional probability P(Y|X) directly and typically achieve higher boundary accuracy.",
+    "relevant_sources": ["ml_caseStudy.pdf"],
+    "relevant_content_types": ["text"],
+    "required_context": [
+      "generative",
+      "classifier",
+      "model"
+    ],
+    "expected_fallback": false
+  },
+  {
+    "id": "q32",
+    "query_type": "keyword",
+    "question": "How does Laplace smoothing handle zero-frequency word occurrences in Naive Bayes?",
+    "ground_truth_answer": "Laplace smoothing adds a pseudo-count to feature frequencies to prevent zero-probability multiplications for unseen vocabulary words.",
+    "relevant_sources": ["ml_caseStudy.pdf"],
+    "relevant_content_types": ["text"],
+    "required_context": [
+      "smoothing",
+      "probability",
+      "Bayes"
+    ],
+    "expected_fallback": false
+  }
+]
