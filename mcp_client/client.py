@@ -1,5 +1,6 @@
 import asyncio
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -13,10 +14,16 @@ SERVER_PATH = PROJECT_ROOT / "mcp_server" / "server.py"
 
 
 async def call_mcp_tool(tool_name: str, arguments: dict):
+    env_vars = dict(os.environ)
+    if "PYTHONPATH" in env_vars:
+        env_vars["PYTHONPATH"] = f"{str(PROJECT_ROOT)}{os.pathsep}{env_vars['PYTHONPATH']}"
+    else:
+        env_vars["PYTHONPATH"] = str(PROJECT_ROOT)
 
     server_params = StdioServerParameters(
         command=sys.executable,
-        args=[str(SERVER_PATH)]
+        args=[str(SERVER_PATH)],
+        env=env_vars
     )
 
     async with stdio_client(server_params) as (
@@ -71,4 +78,11 @@ def invoke_mcp_tool(tool_name: str, arguments: dict):
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool:
         future = pool.submit(asyncio.run, call_mcp_tool(tool_name, arguments))
-        return future.result()
+        try:
+            return future.result()
+        except Exception as e:
+            # Unwrap ExceptionGroup if present
+            if hasattr(e, "exceptions") and e.exceptions:
+                sub_msgs = [str(sub) for sub in e.exceptions]
+                raise RuntimeError("; ".join(sub_msgs)) from e
+            raise

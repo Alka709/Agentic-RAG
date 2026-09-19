@@ -21,24 +21,37 @@ from rag.web_search import (
 
 mcp = FastMCP("Agentic RAG Tools")
 
-embeddings = get_embedding_model(EMBEDDING_MODEL)
+_embeddings = None
+_web_client = None
 
-# Load existing saved FAISS index and BM25 index built by app.py
-if not VECTOR_DB_DIR.exists():
-    raise RuntimeError(
-        f"Vector store not found at '{VECTOR_DB_DIR}'. "
-        "Please run app.py first to load a document and build the index."
-    )
 
-vector_store, bm25_index = load_hybrid_stores(VECTOR_DB_DIR, embeddings)
+def get_embeddings():
+    global _embeddings
+    if _embeddings is None:
+        _embeddings = get_embedding_model(EMBEDDING_MODEL)
+    return _embeddings
 
-web_client = create_web_search_client()
+
+def get_web_client():
+    global _web_client
+    if _web_client is None:
+        try:
+            _web_client = create_web_search_client()
+        except Exception:
+            _web_client = None
+    return _web_client
 
 
 # VECTOR / HYBRID SEARCH TOOL
 @mcp.tool()
 def vector_search(query: str, top_k: int = 5) -> list[dict]:
     """Search documents related to a query using Hybrid Retrieval (Dense FAISS + Sparse BM25 fused with RRF)."""
+    if not VECTOR_DB_DIR.exists() or not (VECTOR_DB_DIR / "index.faiss").exists():
+        return []
+
+    embeddings = get_embeddings()
+    vector_store, bm25_index = load_hybrid_stores(VECTOR_DB_DIR, embeddings)
+
     return retrieve_documents(
         vector_store=vector_store,
         query=query,
@@ -56,8 +69,12 @@ def web_search(
     """
     Search the web for information related to a query.
     """
+    client = get_web_client()
+    if client is None:
+        return []
+
     return search_web(
-        web_client,
+        client,
         query,
         max_results
     )
