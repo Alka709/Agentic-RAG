@@ -1,7 +1,7 @@
 langchain
 langchain-text-splitters
 langchain-community
-langchain-ollama
+langchain-google-genai
 langchain-huggingface
 langgraph
 

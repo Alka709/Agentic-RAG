@@ -4,13 +4,13 @@ from pathlib import Path
 from typing import Dict, Optional
 
 from langchain_core.messages import HumanMessage
-from langchain_ollama import ChatOllama
+from langchain_google_genai import ChatGoogleGenerativeAI
 
-from config import VISION_LLM_MODEL, OLLAMA_BASE_URL
+from config import VISION_LLM_MODEL, GEMINI_API_KEY
 
 logger = logging.getLogger(__name__)
 
-# Cache model availability so we don't spam failed HTTP requests on every image
+# Cache model availability so we don't spam failed API requests on every image
 _MODEL_AVAILABILITY_CACHE: Dict[str, bool] = {}
 
 
@@ -23,12 +23,13 @@ def encode_image_to_base64(image_path: Path) -> str:
 def describe_image(
     image_path: Path,
     model_name: Optional[str] = None,
-    base_url: Optional[str] = None,
     source: str = "",
-    page: int = 0
+    page: int = 0,
+    # kept for backward-compat; ignored (Gemini doesn't need a base_url)
+    base_url: Optional[str] = None,
 ) -> str:
     """
-    Uses a vision-capable LLM to generate a detailed, retrieval-friendly
+    Uses a Gemini vision model to generate a detailed, retrieval-friendly
     textual description of an image.
     """
     image_path = Path(image_path)
@@ -36,14 +37,13 @@ def describe_image(
         raise FileNotFoundError(f"Image not found at {image_path}")
 
     model_name = model_name or VISION_LLM_MODEL
-    base_url = base_url or OLLAMA_BASE_URL
 
     fallback_description = (
         f"Image extracted from page {page} of {source}. "
         f"Filename: {image_path.name}."
     )
 
-    # If this model previously failed availability check, skip directly to fallback
+    # If this model previously failed, skip directly to fallback
     if _MODEL_AVAILABILITY_CACHE.get(model_name) is False:
         return fallback_description
 
@@ -62,12 +62,10 @@ def describe_image(
             f"Provide ONLY the detailed description without conversational filler."
         )
 
-        vision_llm = ChatOllama(
+        vision_llm = ChatGoogleGenerativeAI(
             model=model_name,
-            base_url=base_url,
+            google_api_key=GEMINI_API_KEY,
             temperature=0,
-            num_predict=512,
-            timeout=10,  # Prevent indefinite hangs
         )
 
         message = HumanMessage(
@@ -89,16 +87,16 @@ def describe_image(
     except Exception as e:
         error_msg = str(e)
         if _MODEL_AVAILABILITY_CACHE.get(model_name) is None:
-            if "unknown model architecture" in error_msg.lower() or "mllama" in error_msg.lower():
+            if "api_key" in error_msg.lower() or "api key" in error_msg.lower() or "credentials" in error_msg.lower():
                 print(
-                    f"\n[Notice] Vision model '{model_name}' failed to load (Ollama version does not support 'mllama' architecture).\n"
-                    f"-> To fix: Update Ollama from https://ollama.com OR use 'llava' by setting VISION_LLM_MODEL=llava in .env.\n"
+                    f"\n[Notice] Gemini vision model '{model_name}' failed: invalid or missing API key.\n"
+                    f"-> Make sure GEMINI_API_KEY is set correctly in your .env file.\n"
                     f"-> Proceeding with structural image metadata for retrieval.\n"
                 )
-            elif "not found" in error_msg.lower() or "404" in error_msg or "connect" in error_msg.lower():
+            elif "not found" in error_msg.lower() or "404" in error_msg:
                 print(
-                    f"\n[Notice] Vision model '{model_name}' was not reachable in Ollama.\n"
-                    f"-> To fix: Run 'ollama pull {model_name}'\n"
+                    f"\n[Notice] Gemini model '{model_name}' was not found.\n"
+                    f"-> Check that LLM_MODEL / VISION_LLM_MODEL in .env is a valid Gemini model name (e.g. gemini-2.0-flash).\n"
                     f"-> Proceeding with structural image metadata for retrieval.\n"
                 )
             else:

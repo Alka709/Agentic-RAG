@@ -18,3 +18,14 @@ vector_db/*
 # Local data
 data/*
 !data/.gitkeep
+
+# Node / frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+
+# Docker
+.dockerignore
+frontend/.dockerignore
