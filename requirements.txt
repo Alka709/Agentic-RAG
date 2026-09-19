@@ -16,6 +16,7 @@ python-dotenv
 
 tavily-python
 
+mcp<2
 fastmcp
 fastapi
 uvicorn
