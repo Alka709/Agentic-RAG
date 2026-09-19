@@ -61,10 +61,14 @@ async def call_mcp_tool(tool_name: str, arguments: dict):
 
 def invoke_mcp_tool(tool_name: str, arguments: dict):
     """
-    Synchronous wrapper so it can be used easily
-    inside the current LangGraph nodes.
-    """
+    Synchronous wrapper so it can be used inside LangGraph nodes
+    whether or not a running event loop is present (e.g. FastAPI/uvicorn).
 
-    return asyncio.run(
-        call_mcp_tool(tool_name, arguments)
-    )
+    asyncio.run() cannot be called from inside a running event loop, so
+    we spin up a fresh loop on a dedicated background thread instead.
+    """
+    import concurrent.futures
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool:
+        future = pool.submit(asyncio.run, call_mcp_tool(tool_name, arguments))
+        return future.result()
