@@ -1,7 +1,7 @@
 # DocuMind AI
 
 **DocuMind AI** is an intelligent multimodal document assistant powered by **Hybrid RAG (FAISS + BM25 with Reciprocal Rank Fusion)**, **LangGraph orchestration**, retrieval evaluation, and **Model Context Protocol (MCP)** web-search fallback.
-
+The project is live at: https://documind-ai-bice-two.vercel.app/
 ---
 
 ## ⚡ Quick Start (Docker)
