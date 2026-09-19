@@ -7,7 +7,7 @@ FROM python:3.11-slim AS builder
 
 WORKDIR /build
 
-# Install build tools needed by some Python wheels (e.g. faiss-cpu, sentence-transformers)
+# Install build tools needed by some Python wheels (e.g. faiss-cpu)
 RUN apt-get update && apt-get install -y --no-install-recommends \
         build-essential \
         gcc \

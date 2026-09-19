@@ -2,12 +2,9 @@ langchain
 langchain-text-splitters
 langchain-community
 langchain-google-genai
-langchain-huggingface
 langgraph
 
 faiss-cpu
-
-sentence-transformers
 
 pypdf
 pdfplumber
