@@ -79,7 +79,18 @@ def describe_image(
         )
 
         response = vision_llm.invoke([message])
-        description = response.content.strip()
+        content_raw = response.content
+        if isinstance(content_raw, str):
+            description = content_raw.strip()
+        elif isinstance(content_raw, list):
+            parts = [
+                item.get("text", str(item)) if isinstance(item, dict) else (item.text if hasattr(item, "text") else str(item))
+                for item in content_raw
+            ]
+            description = "\n".join(parts).strip()
+        else:
+            description = str(content_raw).strip()
+
         if description:
             _MODEL_AVAILABILITY_CACHE[model_name] = True
             return description
